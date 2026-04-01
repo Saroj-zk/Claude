@@ -21,10 +21,10 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     touch-action: manipulation;
     line-height: 1.5;
 }
@@ -32,7 +32,8 @@ body {
 #container {
     max-width: 560px;
     width: 100%;
-    padding: 2rem;
+    margin: auto;
+    padding: 2rem 1rem;
     position: relative;
     z-index: 10;
 }
@@ -236,4 +237,17 @@ header {
     font-weight: bold;
     cursor: pointer;
     border-radius: 4px;
+}
+
+/* Responsive constraints for smaller screens */
+@media (max-width: 480px) {
+    #intro h2 { font-size: 1.8rem; }
+    #game-area { padding: 1.5rem; }
+    #claim-btn { padding: 0.8rem 1rem; }
+}
+@media (max-height: 750px) {
+    #notice-banner { margin-bottom: 1rem; padding: 0.6rem 0.8rem; }
+    #intro h2 { margin-bottom: 0.5rem; }
+    #intro p { margin-bottom: 0.8rem; }
+    #game-area { margin-top: 1rem; padding: 1.5rem; }
 }
