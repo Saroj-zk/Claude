@@ -1,0 +1,239 @@
+:root {
+    --bg-color: #f5f4ef;
+    --card-bg: #ffffff;
+    --text-primary: #151515;
+    --text-secondary: #5a5953;
+    --border-color: #e5e3da;
+    --accent-orange: #d97757;
+    --accent-dark: #cc6a4b;
+    --meter-bg: #ecebea;
+    --banner-bg: #f9f8f4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    touch-action: manipulation;
+    line-height: 1.5;
+}
+
+#container {
+    max-width: 560px;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+}
+
+#notice-banner {
+    background-color: var(--banner-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+#notice-banner svg {
+    color: var(--accent-orange);
+}
+
+#notice-banner strong {
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+#intro h2 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+#intro p {
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+}
+
+#game-area {
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+#meter-container {
+    height: 8px;
+    background-color: var(--meter-bg);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+#meter-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--accent-orange);
+    transition: width 0.1s linear;
+    border-radius: 4px;
+}
+
+#instruction {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+#claim-btn {
+    background-color: var(--accent-orange);
+    color: white;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+    user-select: none;
+    width: 100%;
+}
+
+#claim-btn:hover {
+    background-color: var(--accent-dark);
+}
+
+#claim-btn:active {
+    opacity: 0.8;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Chaos Effects (only activated right at the end) */
+.shake-3 { animation: shake 0.05s infinite; }
+@keyframes shake {
+    0% { transform: translate(2px, 2px) rotate(0deg); }
+    10% { transform: translate(-2px, -3px) rotate(-1deg); }
+    50% { transform: translate(-2px, 3px) rotate(-2deg); }
+    100% { transform: translate(2px, -3px) rotate(-2deg); }
+}
+
+.deep-fried { filter: contrast(4) saturate(10) brightness(1.2) hue-rotate(45deg); }
+
+#chaos-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Troll Screen */
+#troll-screen {
+    background: #000;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: monospace;
+}
+
+.glitch {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff0055;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    animation: glitch 300ms infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0) }
+    20% { transform: translate(-2px, 2px) }
+    40% { transform: translate(-2px, -2px) }
+    60% { transform: translate(2px, 2px) }
+    80% { transform: translate(2px, -2px) }
+    100% { transform: translate(0) }
+}
+
+#troll-screen p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+#troll-face {
+    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+#restart-btn {
+    background: #ff0055;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}

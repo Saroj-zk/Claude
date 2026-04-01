@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Claude - Official Pro Giveaway</title>
+    <!-- Authentic serif and sans-serif pairing -->
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+
+        <main id="main-content">
+            <div id="notice-banner">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>Temporary session expires in <strong id="time-left">03:00</strong>. Action required.</span>
+            </div>
+
+            <div id="intro">
+                <h2>Official Anthropic Giveaway: 1-Year Claude Pro</h2>
+                <p>You have been selected for a complementary 12-month provision of Claude Pro. This unlocks our largest context window and gives priority during high-traffic periods.</p>
+                <p>To successfully finalize your claim, our system requires immediate Human Verification to combat automated bot traffic.</p>
+            </div>
+            
+            <div id="game-area">
+                <div class="status-header">
+                    <span class="status-label">Estimated Queue Position</span>
+                    <span class="status-value" id="queue-text" style="color: var(--accent-orange); font-size: 1.1rem; font-variant-numeric: tabular-nums;">14,204</span>
+                </div>
+                
+                <div style="margin: 1.5rem 0; border-top: 1px solid var(--border-color);"></div>
+                
+                <div class="status-header">
+                    <span class="status-label">Human Verification Progress</span>
+                    <span class="status-value" id="percent-text">0.0%</span>
+                </div>
+                <div id="meter-container">
+                    <div id="meter-fill"></div>
+                </div>
+                
+                <p id="instruction">Rapidly engage "Verify Humanity" to increase your priority and skip ahead in the queue. Progression reverses if left idle.</p>
+                
+                <button id="claim-btn">Verify Humanity</button>
+            </div>
+        </main>
+        
+        <div id="troll-screen" class="hidden">
+            <h1 class="glitch" data-text="APRIL FOOLS!">APRIL FOOLS!</h1>
+            <p>You really just tapped a button 100 times for nothing.</p>
+            <img id="troll-face" src="https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif" alt="Rickroll">
+            <br>
+            <button id="restart-btn" onclick="location.reload()">Return to Dashboard</button>
+        </div>
+        
+        <div id="chaos-layer"></div>
+    </div>
+    
+    <!-- Audio elements -->
+    <audio id="audio-fah" src="fahhh.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
