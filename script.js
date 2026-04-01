@@ -100,7 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
         playAudio(fahAudio, 1.0);
     }
     
-    const maxQueue = 14204;
+    const maxQueue = Math.floor(Math.random() * 15000) + 7500; // Random queue between 7,500 and 22,500
+    queueText.innerText = maxQueue.toLocaleString();
+
     function updateDisplay() {
         meterFill.style.width = `${meterValue}%`;
         percentText.innerText = `${meterValue.toFixed(1)}%`;
